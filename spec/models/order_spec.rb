@@ -37,7 +37,7 @@ RSpec.describe Order, type: :model do
     expect(subject).to respond_to(:customer)
   end
 
-  it "is invalid if product_name is too long less than 30 char" do
+  it "is valid if product_name is not greater than 30 char" do
     subject.product_name = "x" * 30 
     expect(subject).to be_valid
   end
