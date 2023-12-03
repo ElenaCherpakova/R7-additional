@@ -69,9 +69,9 @@ RSpec.describe "Customers", type: :request do
   end
   describe "delete a customer record" do
     it "deletes a customer record" do
-     customer = FactoryBot.create(:customer)
-     expect {delete customer_path(customer.id)}.to change(Customer, :count)
-     expect(response).to redirect_to customers_path
+      customer = FactoryBot.create(:customer)
+      expect {delete customer_path(customer.id)}.to change(Customer, :count)
+      expect(response).to redirect_to customers_path
     end
   end
 end

@@ -3,8 +3,28 @@
 <%= render @customer %>
 
 <div>
-  <%= link_to "Edit this customer", edit_customer_path(@customer) %> |
-  <%= link_to "Back to customers", customers_path %>
-
-  <%= button_to "Destroy this customer", @customer, method: :delete %>
+  <%= link_to "Edit customer", edit_customer_path(@customer) %> |
+  <%= link_to "Back customers", customers_path %>
+  <%= button_to "Destroy customer", @customer, method: :delete %>
 </div>
+
+<h3>Customer Orders:</h3>
+<% if @customer.orders.present?%>
+  <% @customer.orders.each do |order| %>
+
+<%= render order %>
+<div>
+    <%= link_to "Show order", order %>
+    <%= link_to "Edit order", edit_order_path(order)%>
+    <%= link_to "Delete order", order, method: :delete, data: {turbo_confirm: "Are you sure?" } %>
+  <% end %>
+  <% else %>
+  No orders yet!
+  <%= link_to "Create a new order", new_order_path %>
+  <%end%>
+<div>
+
+
+
+
+
