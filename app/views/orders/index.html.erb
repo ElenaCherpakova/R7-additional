@@ -6,14 +6,12 @@
   <% @orders.each do |order| %>
     <%= render order %>
     <p>
-      <%= link_to "Show this order", order %>
+      <%= link_to "Show this order", order, class: "btn btn-primary" %>
     </p>
   <% end %>
-  <%= link_to "New order", new_order_path %>
+  <%= link_to "New order", new_order_path, class: "btn btn-primary" %>
 
 </div>
 
-
-
 <br>
-<%= link_to "Back to list of customers", customers_path %>
+<%= link_to "<< Back to customers", customers_path, class: "btn btn-primary" %>
