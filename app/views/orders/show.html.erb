@@ -2,8 +2,8 @@
 
 <%= render @order %>
 
-<div>
-    <%= link_to "Edit", edit_order_path(@order) %>
-    <%= link_to "Back", orders_path %>
-    <%= button_to "Delete", @order, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+<div class="d-flex gap-1">
+    <%= link_to "Edit", edit_order_path(@order), class: "btn btn-primary" %>
+    <%= link_to "Back", orders_path, class: "btn btn-primary" %>
+    <%= button_to "Delete", @order, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-primary" %>
 </div>
