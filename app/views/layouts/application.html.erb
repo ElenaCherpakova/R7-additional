@@ -14,6 +14,33 @@
     <%if flash[:alert].present?%>
     <p class="my_alert"><%=flash[:alert]%></p>
     <%end%>
-    <%= yield %>
+    
+    <div class="container-fluid">
+      <div class="mt-4 p-5 bg-primary text-white rounded banner-background">
+        <h1>Customers and Orders</h1>
+        <p>This is a sample application that associates orders with customers.</p>
+      </div>
+
+      <nav class="navbar navbar-expand-sm bg-light">
+        <div class="dropdown">
+            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+              Customers    
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Link 1</a></li>
+              <li><a class="dropdown-item" href="#">Link 2</a></li>
+              <li><a class="dropdown-item" href="#">Link 3</a></li>
+            </ul><button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+              Orders    
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#">Link 1</a>
+              </li>
+            </ul>
+        </div>
+      </nav>
+      <%= yield %>
+    </div>
   </body>
 </html>

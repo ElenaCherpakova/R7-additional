@@ -3,31 +3,31 @@
 <h1>Customers</h1>
 
 
-<table style="text-align:center; border: 1px solid black; border-collapse: collapse;">
+<table class="table table-striped">
   <thead>
     <tr>
-      <th style="border: 1px solid black;">Customer Full Name</th>
-      <th style="border: 1px solid black;">Number of Orders</th>
-      <th style="border: 1px solid black;" colspan="3">Actions</th>
+      <th scope="col">Name</th>
+      <th scope="col">Number of Orders</th>
+      <th scope="col" colspan="3"></th>
     </tr>
   </thead>
 <tbody>
   <% @customers.each do |customer| %>
-  <tr style="border: 1px solid black;">
-    <td  style="border: 1px solid black;">
+  <tr>
+    <td>
       <%=customer.full_name%>
     </td>
-    <td  style="border: 1px solid black;">
+    <td>
       <%=customer.orders.count%>
     </td>
     <td>
-      <%= link_to "Show", customer %>
+      <%= link_to "Show", customer, class: "btn btn-primary" %>
     </td>
     <td>
-      <%= link_to "Edit", edit_customer_path(customer) %>
+      <%= link_to "Edit", edit_customer_path(customer), class: "btn btn-primary" %>
     </td>
     <td>
-      <%= button_to "Delete", customer, method: :delete, data: { turbo_confirm: "Are you sure?" }  %>
+      <%= button_to "Delete", customer, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-primary"%>
     </td>
   </tr>
   <% end %>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to "New customer", new_customer_path %>
+<%= link_to "New customer", new_customer_path, class: "btn btn-primary" %>
