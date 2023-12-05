@@ -11,14 +11,19 @@
   </head>
 
   <body>
-    <%if flash[:alert].present?%>
-    <p class="my_alert"><%=flash[:alert]%></p>
-    <%end%>
-    
+   
     <div class="container-fluid">
       <div class="mt-4 p-5 bg-primary text-white rounded banner-background">
         <h1>Customers and Orders</h1>
         <p>This is a sample application that associates orders with customers.</p>
+      </div>
+      <div class="alert-notification">
+          <%if flash[:alert].present?%>
+            <div class="alert alert-danger" role="alert"><%=flash[:alert]%></div>
+          <%end%>
+          <%if flash[:notice].present?%>
+            <div class="alert alert-success" role="alert"><%=flash[:notice]%></div>
+          <%end%>
       </div>
       <nav class="navbar navbar-expand-sm bg-light">
         <div class="dropdown">
@@ -40,6 +45,7 @@
               </li>
             </ul>
         </div>
+        
       </nav>
       <%= yield %>
     </div>
