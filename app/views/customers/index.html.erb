@@ -12,9 +12,10 @@
   </thead>
 <tbody>
   <% @customers.each do |customer| %>
+  <%= render "deleteModal", customer: customer %>
   <tr>
     <td>
-      <%=customer.full_name%>
+      <%=customer.full_name %>
     </td>
     <td>
       <%=customer.orders.count%>
@@ -30,10 +31,11 @@
       <%end%>
     </td>
     <td>
-      <%= button_to customer, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-primary" do%>
-      <%= icon('fa-regular', 'trash-can')%>
-      <%end%>
-    </td>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal-<%= customer.id %>">
+    <%= icon('fa-regular', 'trash-can') %>
+  </button>
+</td>
+
   </tr>
   <% end %>
   <tbody>
