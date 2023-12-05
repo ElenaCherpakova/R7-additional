@@ -20,13 +20,19 @@
       <%=customer.orders.count%>
     </td>
     <td>
-      <%= link_to "Show", customer, class: "btn btn-primary" %>
+      <%= link_to customer, class: "btn btn-primary" do%>
+       <%= icon('fa-regular','eye')%>
+      <%end%>
     </td>
     <td>
-      <%= link_to "Edit", edit_customer_path(customer), class: "btn btn-primary" %>
+      <%= link_to edit_customer_path(customer), class: "btn btn-primary" do%>
+      <%= icon('fa-regular','pen-to-square')%>
+      <%end%>
     </td>
     <td>
-      <%= button_to "Delete", customer, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-primary"%>
+      <%= button_to customer, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-primary" do%>
+      <%= icon('fa-regular', 'trash-can')%>
+      <%end%>
     </td>
   </tr>
   <% end %>
@@ -35,4 +41,6 @@
 
 <br>
 
-<%= link_to "New customer", new_customer_path, class: "btn btn-primary" %>
+<%= link_to new_customer_path, class: "btn btn-primary" do%> New Customer
+  <%= icon('fa-solid', 'user-plus')%> 
+<%end%>

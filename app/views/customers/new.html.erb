@@ -5,5 +5,7 @@
 <br>
 
 <div>
-  <%= link_to "<< Back to customers", customers_path, class: "btn btn-primary" %>
+  <%= link_to customers_path, class: "btn btn-primary" do%> 
+    <%= icon('fa-solid', 'arrow-left')%> Back to customers
+  <%end%>
 </div>

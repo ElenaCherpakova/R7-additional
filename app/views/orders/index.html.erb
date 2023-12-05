@@ -21,7 +21,11 @@
   <% end %>
 </div>
 <br>
-  <%= link_to "New order", new_order_path, class: "btn btn-primary" %>
-  <%= link_to "<< Back to customers", customers_path, class: "btn btn-primary" %>
+  <%= link_to new_order_path, class: "btn btn-primary" do%>New order
+     <%= icon('fa-solid', 'plus')%>
+  <%end%>
+  <%= link_to customers_path, class: "btn btn-primary" do%>
+    <%= icon('fa-solid', 'arrow-left')%> Back to customers
+  <%end%>
 
 
